@@ -22,28 +22,28 @@
     <!-- endbuild -->
   </head>
   <body>
+    <main>
+      <header>
+        <h1>Issues</h1>
+      </header>
+      <section id='issues'>
+      </section>
+      <footer>
+      </footer>
+    </main>
 
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
-
-        <li>Sass</li>
-
-
-        <li>Modernizr</li>
-
-
-        <li>Bourbon & Neat</li>
-
-
-        <li>UnderscoreJS</li>
-
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
-    </div>
+    <script id='issueTemplate' type='text/template'>
+      <div class="hero-unit">
+        <aside><%= number %></aside>
+        <ul>
+          <li><h2><a href='<%= html_url %>'><%= title %></a></h2></li>
+          <% if (body) { %>
+            <li><%= body %></li>
+          <% } %>
+          <li><%= state %></li>
+        </ul>
+      </div>
+    </script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -53,6 +53,7 @@
     <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
+        <script src='scripts/github_token.js'></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
